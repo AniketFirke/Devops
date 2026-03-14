@@ -123,37 +123,28 @@ CPU < 30%
 
 # 🔄 Architecture Flowchart
 
+```mermaid
 flowchart TB
-
-User --> ALB
-
-ALB --> EC2_1
-ALB --> EC2_2
-
-EC2_1 --> ASG
-EC2_2 --> ASG
-
-ASG --> CloudWatch
-
-CloudWatch -->|CPU > 70%| ScaleOut
-CloudWatch -->|CPU < 30%| ScaleIn
-
+    User --> ALB
+    ALB --> EC2_1
+    ALB --> EC2_2
+    EC2_1 --> ASG
+    EC2_2 --> ASG
+    ASG --> CloudWatch
+    CloudWatch -->|CPU > 70%| ScaleOut
+    CloudWatch -->|CPU < 30%| ScaleIn
+```
 ---
 
+```mermaid
 flowchart LR
-
-UserTraffic --> ALB
-
-ALB --> EC2Instances
-
-EC2Instances --> CloudWatch
-
-CloudWatch --> ScalingPolicy
-
-ScalingPolicy --> ASG
-
-ASG --> NewEC2Instances
-
+    UserTraffic --> ALB
+    ALB --> EC2Instances
+    EC2Instances --> CloudWatch
+    CloudWatch --> ScalingPolicy
+    ScalingPolicy --> ASG
+    ASG --> NewEC2Instances
+```
 ---
 
 # 🧪 Testing Auto Scaling
