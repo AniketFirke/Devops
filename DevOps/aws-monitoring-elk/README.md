@@ -140,10 +140,6 @@ flowchart LR
 
 ---
 
-![alt text](diagrams/elasticsearch-reference-architecture.png)
-
----
-
 ![alt text](diagrams/grafana.jpg)
 
 ---
